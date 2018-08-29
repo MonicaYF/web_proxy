@@ -1,0 +1,12 @@
+version: '2'
+services:
+    web:
+       build: ./web-proxy
+       user: nobody
+       command: ./myproxy 12345
+       volumes:
+         - ./web-proxy:/code
+         - ./logs:/var/log/erss
+       ports:
+         - "12345:12345"
+       
